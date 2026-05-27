@@ -1,0 +1,7 @@
+{{ define "main" }}
+<article class="page">
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+  <p class="muted small"><a href="{{ "/" | relURL }}">← Acasă</a></p>
+</article>
+{{ end }}

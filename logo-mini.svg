@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" width="64" height="80">
+  <!-- Simplified secondary mark for small applications (favicon, app icon, embroidery).
+       Shield outline = EXACT same contour as primary logo (scaled 1:4) including virgulă tip. -->
+
+  <!-- Shield path scaled from primary: M 20,20 L 380,20 L 380,340 C 380,420 365,476 215,476
+       C 210,476 200,490 200,498 C 200,490 190,476 185,476 C 35,476 20,420 20,340 Z
+       Scaled by 0.25 → viewBox 0 0 100 125. Preserves the comma-like (virgulă) tip. -->
+  <path d="M 5,5 L 95,5 L 95,85
+           C 95,105 91,119 54,119
+           C 52.5,119 50,122.5 50,124.5
+           C 50,122.5 47.5,119 46,119
+           C 9,119 5,105 5,85 Z"
+        fill="#102a5c" stroke="#c89826" stroke-width="1.4"/>
+
+  <!-- Trefoil bow: 3 small interlocking rings (preserves Ungheni's distinctive bow) -->
+  <g fill="none" stroke="#c89826" stroke-width="2.5">
+    <circle cx="42" cy="34" r="9"/>
+    <circle cx="58" cy="34" r="9"/>
+    <circle cx="50" cy="34" r="10"/>
+  </g>
+
+  <!-- Shaft -->
+  <rect x="48" y="46" width="4" height="40" fill="#c89826"/>
+
+  <!-- Simplified bit: small crossbar + one ward -->
+  <rect x="40" y="86" width="20" height="3.5" fill="#c89826"/>
+  <rect x="38" y="93" width="14" height="3.5" fill="#c89826"/>
+
+  <!-- 2 wavy bar hints (1 per side) -->
+  <g fill="none" stroke="#c89826" stroke-width="1.6" stroke-linecap="round">
+    <path d="M 14,64 q 6,-3 12,0 t 12,0"/>
+    <path d="M 62,64 q 6,-3 12,0 t 12,0"/>
+  </g>
+</svg>

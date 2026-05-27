@@ -1,0 +1,177 @@
+{{ define "main" }}
+<section class="hero">
+  <div class="hero-mark">
+    <img src="{{ "logo.svg" | relURL }}" alt="Ungheni mark" width="280"/>
+  </div>
+  <div class="hero-text">
+    <h1>Ungheni<br/><span class="hero-sub">mark comunitar independent</span></h1>
+    <p class="lead">
+      O reconstrucție grafică modernă a motivelor heraldice istorice asociate orașului
+      Ungheni — cheia ca simbol al orașului-poartă și apele Prutului — adaptată
+      pentru realitatea Republicii Moldova independente.
+    </p>
+    <p>
+      <a class="btn primary" href="#download">Download active</a>
+      <a class="btn" href="#system">Vezi sistemul</a>
+    </p>
+    <p class="muted small">
+      <strong>NU este însemnul oficial</strong> al primăriei sau autorității locale.
+      Acesta este un design independent comunitar pentru folosire liberă în contexte civice ne-oficiale.
+    </p>
+  </div>
+</section>
+
+<section id="about" class="section">
+  <h2>Despre acest design</h2>
+  <div class="two-col">
+    <div>
+      <p>
+        Designul preia vocabularul vizual local — <strong>cheia</strong> (oraș-poartă, granița cu România)
+        și <strong>cele șase bare ondulate</strong> ale Prutului — și îl execută într-un sistem grafic
+        modern, plat, optimizat pentru aplicații digitale și print contemporane.
+      </p>
+      <p>
+        Reconstrucția și adaptarea post-sovietică au fost efectuate de <strong>Lightcyphers SRL</strong>.
+        Modificări intenționate față de versiunea sovietică originală:
+      </p>
+      <ul>
+        <li><strong>Alfabet latin</strong> pentru numele orașului (UNGHENI vs УНГЕНЫ)</li>
+        <li><strong>Dinții cheii orientați spre vest</strong> — deschidere spre Europa</li>
+        <li><strong>Paletă plată modernă</strong> — fără efecte de metal turnat ale insignei vechi</li>
+        <li><strong>Tipografie Cinzel</strong> inscripțional — capitale Roman clasice</li>
+      </ul>
+    </div>
+    <aside class="note-box">
+      <p>
+        Motivele heraldice istorice (cheia + apele Prutului) reprezintă patrimoniu vizual public
+        asociat orașului Ungheni și nu sunt revendicate ca proprietate exclusivă.
+      </p>
+      <p>
+        Drepturile de mai sus se aplică doar <em>reconstrucției și adaptării specifice</em>
+        publicate aici.
+      </p>
+    </aside>
+  </div>
+</section>
+
+<section id="system" class="section">
+  <h2>Sistemul de mark-uri</h2>
+
+  <h3>Mark primar</h3>
+  <p>Versiunea completă, folosită în materiale de comunicare publică ale comunității.</p>
+  <div class="showcase showcase-primary">
+    <img src="{{ "logo.svg" | relURL }}" alt="Mark primar" width="240"/>
+  </div>
+
+  <h3>Mark secundar — variante la diferite scale</h3>
+  <p>Versiune simplificată pentru aplicații mici (favicon, app icon, broderie, ștampile).</p>
+  <div class="showcase showcase-mini">
+    <div class="size-cell">
+      <img src="{{ "logo-mini.svg" | relURL }}" alt="128" width="128" height="160"/>
+      <span class="size-label">128 px</span>
+    </div>
+    <div class="size-cell">
+      <img src="{{ "logo-mini.svg" | relURL }}" alt="64" width="64" height="80"/>
+      <span class="size-label">64 px</span>
+    </div>
+    <div class="size-cell">
+      <img src="{{ "logo-mini.svg" | relURL }}" alt="32" width="32" height="40"/>
+      <span class="size-label">32 px · favicon</span>
+    </div>
+    <div class="size-cell">
+      <img src="{{ "logo-mini.svg" | relURL }}" alt="16" width="16" height="20"/>
+      <span class="size-label">16 px · toolbar</span>
+    </div>
+  </div>
+
+  <h3>Variante monocrome — pentru light și dark themes</h3>
+  <div class="theme-grid">
+    <div class="theme-cell light">
+      <img src="{{ "logo-mono-dark.svg" | relURL }}" alt="Mono dark on light" width="200"/>
+      <span class="size-label">Mono — închis pe deschis</span>
+    </div>
+    <div class="theme-cell dark">
+      <img src="{{ "logo-mono-light.svg" | relURL }}" alt="Mono light on dark" width="200"/>
+      <span class="size-label">Mono — deschis pe închis</span>
+    </div>
+  </div>
+
+  <h3>Paleta</h3>
+  <div class="palette">
+    <div class="swatch" style="background:#102a5c">
+      <strong>Ungheni Navy</strong>
+      <code>#102a5c</code>
+      <small>Pantone 2766 C</small>
+    </div>
+    <div class="swatch" style="background:#c89826;color:#102a5c">
+      <strong>Ungheni Gold</strong>
+      <code>#c89826</code>
+      <small>Pantone 124 C</small>
+    </div>
+  </div>
+
+  <h3>Tipografia</h3>
+  <p>
+    Font: <strong>Cinzel</strong> (Google Fonts, OFL) — capitale Roman inscripțional, inspirat din
+    coloana lui Traian (sec. II d.Hr.). Greutate Medium 500. Letter-spacing 10.
+  </p>
+  <div class="type-demo">UNGHENI</div>
+</section>
+
+<section id="download" class="section">
+  <h2>Download</h2>
+
+  <h3>Documente</h3>
+  <ul class="download-list">
+    <li><a href="{{ "brandbook.pdf" | relURL }}">brandbook.pdf</a> — ghid de stil complet (sistem, culori, tipografie, clear space, DO/DON'T)</li>
+    <li><a href="{{ "blueprint.pdf" | relURL }}">blueprint.pdf</a> — plan constructiv tehnic cu toate dimensiunile și coordonatele</li>
+  </ul>
+
+  <h3>SVG (sursă)</h3>
+  <ul class="download-list">
+    <li><a href="{{ "logo.svg" | relURL }}">logo.svg</a> — mark primar color</li>
+    <li><a href="{{ "logo-mini.svg" | relURL }}">logo-mini.svg</a> — mark secundar simplificat</li>
+    <li><a href="{{ "logo-mono.svg" | relURL }}">logo-mono.svg</a> — mono <code>currentColor</code></li>
+    <li><a href="{{ "logo-mono-dark.svg" | relURL }}">logo-mono-dark.svg</a> — mono navy pentru fundal deschis</li>
+    <li><a href="{{ "logo-mono-light.svg" | relURL }}">logo-mono-light.svg</a> — mono alb pentru fundal închis</li>
+    <li><a href="{{ "logo-mini-mono.svg" | relURL }}">logo-mini-mono.svg</a> · <a href="{{ "logo-mini-mono-dark.svg" | relURL }}">dark</a> · <a href="{{ "logo-mini-mono-light.svg" | relURL }}">light</a> — variante mono ale mark-ului mic</li>
+  </ul>
+
+  <h3>Pachet complet</h3>
+  <p>
+    Pentru a obține toate fișierele, clonați repo-ul:
+  </p>
+  <pre><code>git clone https://gitlab.com/lightcyphers-open/ulc.git</code></pre>
+</section>
+
+<section id="license" class="section">
+  <h2>Licență</h2>
+  <p>
+    Acest proiect folosește o <strong>licență duală</strong>:
+  </p>
+  <ul>
+    <li>
+      <strong>Active vizuale</strong> (SVG, PDF, PNG):
+      <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>
+      — atribuire obligatorie + non-comercial + share-alike
+    </li>
+    <li>
+      <strong>Cod sursă</strong> (HTML, Typst, CSS, config): MIT
+    </li>
+  </ul>
+  <p>
+    Atribuirea obligatorie:
+  </p>
+  <blockquote>
+    Mark comunitar Ungheni, reconstrucție și adaptare © Lightcyphers SRL,
+    licențiat <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>.
+  </blockquote>
+  <p>
+    Pentru folosire comercială (merchandise, integrare în produse, campanii plătite), contactați
+    <a href="mailto:hello@lightcyphers.com">Lightcyphers SRL</a> pentru o licență comercială separată.
+  </p>
+  <p>
+    Vezi <a href="{{ "license/" | relURL }}">textul complet al licenței</a>.
+  </p>
+</section>
+{{ end }}

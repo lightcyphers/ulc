@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 125" width="64" height="80">
+  <!-- Mini monochrome — uses #102a5c so it adapts to host page text color -->
+
+  <!-- Shield outline (same shape as primary, scaled 1:4) -->
+  <path d="M 5,5 L 95,5 L 95,85
+           C 95,105 91,119 54,119
+           C 52.5,119 50,122.5 50,124.5
+           C 50,122.5 47.5,119 46,119
+           C 9,119 5,105 5,85 Z"
+        fill="none" stroke="#102a5c" stroke-width="1.5"/>
+
+  <!-- Trefoil bow -->
+  <g fill="none" stroke="#102a5c" stroke-width="2.5">
+    <circle cx="42" cy="34" r="9"/>
+    <circle cx="58" cy="34" r="9"/>
+    <circle cx="50" cy="34" r="10"/>
+  </g>
+
+  <!-- Shaft -->
+  <rect x="48" y="46" width="4" height="40" fill="#102a5c"/>
+
+  <!-- Simplified bit -->
+  <rect x="40" y="86" width="20" height="3.5" fill="#102a5c"/>
+  <rect x="38" y="93" width="14" height="3.5" fill="#102a5c"/>
+
+  <!-- 2 wavy bar hints -->
+  <g fill="none" stroke="#102a5c" stroke-width="1.6" stroke-linecap="round">
+    <path d="M 14,64 q 6,-3 12,0 t 12,0"/>
+    <path d="M 62,64 q 6,-3 12,0 t 12,0"/>
+  </g>
+</svg>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>{{ block "title" . }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+<meta name="description" content="{{ .Site.Params.description }}"/>
+<meta name="author" content="{{ .Site.Params.author }}"/>
+
+<!-- Open Graph -->
+<meta property="og:title" content="{{ .Site.Title }}"/>
+<meta property="og:description" content="{{ .Site.Params.description }}"/>
+<meta property="og:image" content="{{ "logo.svg" | absURL }}"/>
+<meta property="og:type" content="website"/>
+
+<link rel="icon" type="image/svg+xml" href="{{ "logo-mini.svg" | relURL }}"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap"/>
+<link rel="stylesheet" href="{{ "css/main.css" | relURL }}"/>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="{{ "/" | relURL }}">
+      <img src="{{ "logo-mini.svg" | relURL }}" alt="Ungheni" width="32" height="40"/>
+      <span class="brand-text">UNGHENI</span>
+    </a>
+    <nav class="site-nav">
+      <a href="#system">Sistem</a>
+      <a href="#download">Download</a>
+      <a href="#license">Licență</a>
+      <a href="https://gitlab.com/lightcyphers-open/ulc">GitLab ↗</a>
+    </nav>
+  </header>
+
+  <main class="site-main">
+    {{ block "main" . }}{{ end }}
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-cols">
+      <div>
+        <p class="footer-brand"><strong>UNGHENI</strong> · Mark Comunitar</p>
+        <p class="muted">Identitate vizuală independentă, non-oficială.</p>
+      </div>
+      <div>
+        <p class="muted">© 2026 <a href="https://lightcyphers.com">Lightcyphers SRL</a></p>
+        <p class="muted">Active vizuale: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · Cod: MIT</p>
+      </div>
+      <div>
+        <p class="muted"><a href="https://gitlab.com/lightcyphers-open/ulc">Repository</a> · <a href="{{ "license/" | relURL }}">Licență completă</a></p>
+        <p class="muted">Pentru folosire comercială: contactați Lightcyphers SRL</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+baseURL = "https://lightcyphers-open.gitlab.io/ulc/"
+languageCode = "ro-MD"
+title = "Ungheni — Mark Comunitar"
+defaultContentLanguage = "ro"
+enableEmoji = false
+
+[params]
+  description = "Mark civic comunitar pentru orașul Ungheni — reconstrucție și adaptare post-sovietică. Identitate vizuală independentă, non-oficială."
+  author = "Lightcyphers SRL"
+  navy = "#102a5c"
+  gold = "#c89826"
+
+[markup.goldmark.renderer]
+  unsafe = true  # allow HTML in markdown for richer layout
+
+[outputs]
+  home = ["HTML"]
+  page = ["HTML"]
+
+[minify]
+  disableHTML = false
+  disableCSS = false
+  disableJS = false

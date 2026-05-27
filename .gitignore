@@ -1,0 +1,41 @@
+# Hugo build output
+/site/public/
+/site/resources/
+/site/.hugo_build.lock
+/public/
+
+# Hugo modules cache
+.hugo_modules/
+
+# Local server data
+.cache/
+*.log
+
+# Generated screenshots (development artifacts — see CLAUDE.md)
+screenshots/
+.playwright-mcp/
+
+# Trace artifacts (potrace intermediate files)
+trace/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*~
+.*.swp
+.idea/
+.vscode/
+*.bak
+
+# Python / Node temp (if any helper scripts)
+__pycache__/
+*.pyc
+node_modules/
+
+# Typst cache
+typst-cache/
+.typst-cache/
+
+# Local server runtime
+http-server.pid
+.claude/

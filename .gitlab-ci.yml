@@ -1,0 +1,67 @@
+stages:
+  - build
+  - deploy
+
+variables:
+  HUGO_ENV: production
+  HUGO_VERSION: "0.140.2"
+
+# ============================================================
+# Optional: regenerate PDFs from Typst sources
+# Disabled by default — commit generated PDFs to repo for stability.
+# Enable by changing `when: manual` to `when: on_success` if you want
+# automatic regeneration on every commit.
+# ============================================================
+build-pdfs:
+  stage: build
+  image: ghcr.io/typst/typst:v0.14
+  when: manual
+  script:
+    # Typst needs PNG renders of logos to embed (see assets/)
+    - apt-get update && apt-get install -y inkscape || true
+    - mkdir -p assets
+    - inkscape logo.svg --export-type=png --export-filename=assets/logo.png --export-width=600 || true
+    - inkscape logo-mini.svg --export-type=png --export-filename=assets/logo-mini.png --export-width=600 || true
+    - inkscape logo-mono-dark.svg --export-type=png --export-filename=assets/logo-mono-dark.png --export-width=600 || true
+    - inkscape logo-mono-light.svg --export-type=png --export-filename=assets/logo-mono-light.png --export-width=600 || true
+    - typst compile brandbook.typ
+    - typst compile blueprint.typ
+  artifacts:
+    paths:
+      - brandbook.pdf
+      - blueprint.pdf
+      - assets/*.png
+    expire_in: 1 week
+
+# ============================================================
+# Hugo build + GitLab Pages deploy
+# Triggers on every push to the default branch.
+# ============================================================
+pages:
+  stage: deploy
+  image:
+    name: hugomods/hugo:exts-${HUGO_VERSION}
+    entrypoint: [""]
+  script:
+    # Copy canonical assets into site/static/ for Hugo to serve
+    - mkdir -p site/static
+    - cp logo.svg site/static/
+    - cp logo-mini.svg site/static/
+    - cp logo-mono.svg site/static/
+    - cp logo-mono-dark.svg site/static/
+    - cp logo-mono-light.svg site/static/
+    - cp logo-mini-mono.svg site/static/
+    - cp logo-mini-mono-dark.svg site/static/
+    - cp logo-mini-mono-light.svg site/static/
+    - cp brandbook.pdf site/static/ 2>/dev/null || echo "brandbook.pdf missing — regenerate locally with 'typst compile brandbook.typ'"
+    - cp blueprint.pdf site/static/ 2>/dev/null || echo "blueprint.pdf missing — regenerate locally with 'typst compile blueprint.typ'"
+    # Build Hugo site
+    - hugo --minify --source site --destination ../public --baseURL "${CI_PAGES_URL}/"
+  pages:
+    path_prefix: ''
+  artifacts:
+    paths:
+      - public
+    expire_in: 1 month
+  rules:
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
