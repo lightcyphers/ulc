@@ -3,34 +3,137 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>{{ block "title" . }}{{ if and .Title (ne .Title .Site.Title) }}{{ .Title }} · {{ end }}{{ .Site.Title }}{{ end }}</title>
-<meta name="description" content="{{ .Site.Params.description }}"/>
+
+{{/* ============ Canonical title + description ============ */}}
+{{ $isHome := .IsHome }}
+{{ $pageTitle := cond $isHome .Site.Title (printf "%s · %s" .Title (.Site.Params.shortTitle | default .Site.Title)) }}
+{{ $desc := cond (and (not $isHome) (.Description)) .Description .Site.Params.description }}
+
+<title>{{ $pageTitle }}</title>
+<meta name="description" content="{{ $desc }}"/>
 <meta name="author" content="{{ .Site.Params.author }}"/>
+<meta name="keywords" content="{{ delimit .Site.Params.keywords ", " }}"/>
+<meta name="robots" content="index, follow, max-image-preview:large"/>
+<meta name="theme-color" content="{{ .Site.Params.navy }}"/>
+<meta name="application-name" content="Logo Ungheni"/>
+<meta http-equiv="content-language" content="{{ .Site.LanguageCode }}"/>
 
-<!-- Open Graph -->
-<meta property="og:title" content="{{ .Site.Title }}"/>
-<meta property="og:description" content="{{ .Site.Params.description }}"/>
-<meta property="og:image" content="{{ "logo.svg" | relURL }}"/>
-<meta property="og:type" content="website"/>
+{{/* Canonical link uses ABSOLUTE base from config (logo.ungheni.biz) */}}
+<link rel="canonical" href="{{ .Permalink | absLangURL | replaceRE "^/" "https://logo.ungheni.biz/" }}"/>
 
+{{/* ============ Open Graph (Facebook, LinkedIn, Slack, Telegram, etc.) ============ */}}
+<meta property="og:type" content="{{ .Site.Params.ogType }}"/>
+<meta property="og:site_name" content="{{ .Site.Params.shortTitle | default .Site.Title }}"/>
+<meta property="og:title" content="{{ $pageTitle }}"/>
+<meta property="og:description" content="{{ cond $isHome .Site.Params.ogDescription $desc }}"/>
+<meta property="og:url" content="https://logo.ungheni.biz/"/>
+<meta property="og:image" content="https://logo.ungheni.biz/logo.svg"/>
+<meta property="og:image:type" content="image/svg+xml"/>
+<meta property="og:image:width" content="800"/>
+<meta property="og:image:height" content="1000"/>
+<meta property="og:image:alt" content="Mark comunitar Ungheni — cheia și apele Prutului pe câmp navy"/>
+<meta property="og:locale" content="{{ .Site.Params.ogLocale }}"/>
+
+{{/* ============ Twitter / X Card ============ */}}
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="{{ $pageTitle }}"/>
+<meta name="twitter:description" content="{{ cond $isHome .Site.Params.ogDescription $desc }}"/>
+<meta name="twitter:image" content="https://logo.ungheni.biz/logo.svg"/>
+<meta name="twitter:image:alt" content="Mark comunitar Ungheni"/>
+{{ with .Site.Params.twitter }}<meta name="twitter:creator" content="{{ . }}"/>{{ end }}
+
+{{/* ============ Favicons (multiple sizes) ============ */}}
 <link rel="icon" type="image/svg+xml" sizes="any" href="{{ "logo-favicon.svg" | relURL }}"/>
 <link rel="icon" type="image/svg+xml" sizes="64x64 128x128" href="{{ "logo-mini.svg" | relURL }}"/>
+<link rel="apple-touch-icon" href="{{ "logo-mini.svg" | relURL }}"/>
+<link rel="mask-icon" href="{{ "logo-mono-dark.svg" | relURL }}" color="{{ .Site.Params.navy }}"/>
+
+{{/* ============ Fonts ============ */}}
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&amp;family=Inter:wght@300;400;500;600&amp;display=swap"/>
 <link rel="stylesheet" href="{{ "css/main.css" | relURL }}"/>
+
+{{/* ============ RSS feed ============ */}}
+{{ with .OutputFormats.Get "rss" -}}
+  <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}"/>
+{{- end }}
+
+{{/* ============ JSON-LD structured data (Organization + WebSite + ImageObject) ============ */}}
+{{ if $isHome }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://logo.ungheni.biz/#org",
+      "name": "Lightcyphers SRL",
+      "url": "https://lightcyphers.com",
+      "logo": "https://logo.ungheni.biz/logo.svg",
+      "sameAs": ["https://gitlab.com/lightcyphers-open"],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Chișinău",
+        "addressCountry": "MD"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://logo.ungheni.biz/#site",
+      "name": "Logo Ungheni · Mark Comunitar",
+      "alternateName": "Logo Ungheni",
+      "url": "https://logo.ungheni.biz/",
+      "inLanguage": "ro-MD",
+      "description": {{ .Site.Params.description | jsonify }},
+      "publisher": {"@id": "https://logo.ungheni.biz/#org"},
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://logo.ungheni.biz/#mark",
+      "name": "Mark Comunitar Ungheni",
+      "headline": "Mark comunitar pentru orașul Ungheni, Moldova",
+      "description": "Reconstrucție și adaptare post-sovietică a stemei istorice a orașului Ungheni (cheia + apele Prutului). Alfabet latin, dinții cheii orientați spre vest, paletă plată modernă.",
+      "creator": {"@id": "https://logo.ungheni.biz/#org"},
+      "copyrightHolder": {"@id": "https://logo.ungheni.biz/#org"},
+      "copyrightYear": "2016-2026",
+      "license": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+      "url": "https://logo.ungheni.biz/",
+      "image": "https://logo.ungheni.biz/logo.svg",
+      "keywords": {{ delimit .Site.Params.keywords ", " | jsonify }},
+      "spatialCoverage": {
+        "@type": "Place",
+        "name": "Ungheni, Republica Moldova",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Ungheni",
+          "addressRegion": "Ungheni",
+          "addressCountry": "MD"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 47.2079,
+          "longitude": 27.7958
+        }
+      }
+    }
+  ]
+}
+</script>
+{{ end }}
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="{{ "/" | relURL }}">
-      <img src="{{ "logo-mini.svg" | relURL }}" alt="Ungheni" width="32" height="40"/>
+      <img src="{{ "logo-mini.svg" | relURL }}" alt="Logo Ungheni — Mark Comunitar" width="32" height="40"/>
       <span class="brand-text">UNGHENI</span>
     </a>
-    <nav class="site-nav">
+    <nav class="site-nav" aria-label="Navigare principală">
       <a href="#system">Sistem</a>
       <a href="#download">Download</a>
       <a href="#license">Licență</a>
-      <a href="https://gitlab.com/lightcyphers-open/ulc">GitLab ↗</a>
+      <a href="https://gitlab.com/lightcyphers-open/ulc" rel="noopener">GitLab ↗</a>
     </nav>
   </header>
 
@@ -45,12 +148,12 @@
         <p class="muted">Identitate vizuală independentă, non-oficială.</p>
       </div>
       <div>
-        <p class="muted">© 2016-2026 <a href="https://lightcyphers.com">Lightcyphers SRL</a></p>
-        <p class="muted">Active vizuale: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> · Cod: MIT</p>
+        <p class="muted">© 2016-2026 <a href="https://lightcyphers.com" rel="author">Lightcyphers SRL</a></p>
+        <p class="muted">Active vizuale: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="license">CC BY-NC-SA 4.0</a> · Cod: MIT</p>
       </div>
       <div>
-        <p class="muted"><a href="https://gitlab.com/lightcyphers-open/ulc">Repository</a> · <a href="{{ "license/" | relURL }}">Licență completă</a></p>
-        <p class="muted">Pentru folosire comercială: contactați Lightcyphers SRL</p>
+        <p class="muted"><a href="https://gitlab.com/lightcyphers-open/ulc" rel="noopener">Repository</a> · <a href="{{ "license/" | relURL }}">Licență completă</a> · <a href="{{ "sitemap.xml" | relURL }}">Sitemap</a></p>
+        <p class="muted">Comercial: <a href="mailto:contacts@lightcyphers.com">contacts@lightcyphers.com</a></p>
       </div>
     </div>
   </footer>

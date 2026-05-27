@@ -1,6 +1,10 @@
 ---
 title: "Licență completă"
-description: "Termenii de licențiere pentru mark-ul comunitar Ungheni"
+description: "Termenii licenței duale pentru mark-ul comunitar Ungheni: CC BY-NC-SA 4.0 pentru active vizuale, MIT pentru cod sursă."
+date: 2026-05-27
+sitemap:
+  changefreq: yearly
+  priority: 0.3
 ---
 
 Acest proiect folosește o **licență duală**: una pentru active vizuale, alta pentru cod sursă.

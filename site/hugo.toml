@@ -1,30 +1,61 @@
 baseURL = "https://logo.ungheni.biz/"
 languageCode = "ro-MD"
-title = "Ungheni — Mark Comunitar"
+title = "Logo Ungheni · Mark comunitar pentru orașul Ungheni, Moldova"
 defaultContentLanguage = "ro"
 enableEmoji = false
+enableRobotsTXT = true
 
 # Dual baseURL support: site works at both https://logo.ungheni.biz/ and
 # https://lightcyphers-open.gitlab.io/ulc/ (and on local file:// preview).
-# relativeURLs makes all internal links relative (../, ./), so they don't
-# care which host serves them.
 relativeURLs = true
 canonifyURLs  = false
 
 [params]
-  description = "Mark civic comunitar pentru orașul Ungheni — reconstrucție și adaptare post-sovietică. Identitate vizuală independentă, non-oficială."
+  shortTitle = "Logo Ungheni"
+  description = "Mark comunitar pentru orașul Ungheni, Republica Moldova — reconstrucție și adaptare post-sovietică a stemei istorice (cheia + apele Prutului). Identitate vizuală independentă, non-oficială, sub licență Creative Commons."
+  ogDescription = "Mark comunitar Ungheni · cheie + apele Prutului · reinterpretare modernă a stemei istorice, alfabet latin, dinții cheii spre vest"
   author = "Lightcyphers SRL"
+  authorURL = "https://lightcyphers.com"
+  twitter = ""
   navy = "#102a5c"
   gold = "#c89826"
+  keywords = [
+    "Ungheni",
+    "Moldova",
+    "Republica Moldova",
+    "logo Ungheni",
+    "stema Ungheni",
+    "mark comunitar Ungheni",
+    "identitate vizuală Ungheni",
+    "heraldic Ungheni",
+    "brand civic",
+    "Prut",
+    "oraș-poartă",
+    "Lightcyphers SRL",
+    "CC BY-NC-SA",
+    "open source",
+    "design comunitar"
+  ]
+  ogLocale = "ro_RO"
+  ogType = "website"
+
+disableKinds = ["taxonomy", "term"]
 
 [markup.goldmark.renderer]
-  unsafe = true  # allow HTML in markdown for richer layout
+  unsafe = true
+
+[taxonomies]
 
 [outputs]
-  home = ["HTML"]
+  home = ["HTML", "RSS"]
   page = ["HTML"]
 
 [minify]
   disableHTML = false
   disableCSS = false
   disableJS = false
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5

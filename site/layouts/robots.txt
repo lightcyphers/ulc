@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Static assets — always crawlable
+Allow: /*.svg
+Allow: /*.pdf
+Allow: /*.png
+Allow: /css/
+
+# Sitemap
+Sitemap: https://logo.ungheni.biz/sitemap.xml
+
+# Slow down bots that hit aggressively (optional)
+Crawl-delay: 1
