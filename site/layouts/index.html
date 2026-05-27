@@ -76,13 +76,18 @@
     </div>
     <div class="size-cell">
       <img src="{{ "logo-mini.svg" | relURL }}" alt="32" width="32" height="40"/>
-      <span class="size-label">32 px · limită inferioară</span>
+      <span class="size-label">32 px · favicon mini</span>
+    </div>
+    <div class="size-cell">
+      <img src="{{ "logo-favicon.svg" | relURL }}" alt="16" width="16" height="20"/>
+      <span class="size-label">16 px · favicon dedicat</span>
     </div>
   </div>
   <p class="muted small">
-    Sub 32 px detaliile geometrice se pierd la rendering anti-aliasing. Pentru
-    favicons și iconițe de toolbar la 16 × 16 sau 24 × 24 recomandăm o
-    versiune dedicată cu trasee îngroșate (planificată separat).
+    Sub 32 px detaliile traseelor subțiri din <code>logo-mini.svg</code> se pierd
+    la rendering anti-aliasing. Pentru 16-24 px folosiți
+    <code>logo-favicon.svg</code> — variantă cu forme filled, fără trasee subțiri,
+    proiectată nativ la viewBox 16×20.
   </p>
 
   <h3>Variante monocrome — pentru light și dark themes</h3>
@@ -131,7 +136,8 @@
   <h3>SVG (sursă)</h3>
   <ul class="download-list">
     <li><a href="{{ "logo.svg" | relURL }}">logo.svg</a> — mark primar color</li>
-    <li><a href="{{ "logo-mini.svg" | relURL }}">logo-mini.svg</a> — mark secundar simplificat</li>
+    <li><a href="{{ "logo-mini.svg" | relURL }}">logo-mini.svg</a> — mark secundar simplificat (32-128 px)</li>
+    <li><a href="{{ "logo-favicon.svg" | relURL }}">logo-favicon.svg</a> — variantă favicon dedicată cu forme filled (16-24 px)</li>
     <li><a href="{{ "logo-mono.svg" | relURL }}">logo-mono.svg</a> — mono <code>currentColor</code></li>
     <li><a href="{{ "logo-mono-dark.svg" | relURL }}">logo-mono-dark.svg</a> — mono navy pentru fundal deschis</li>
     <li><a href="{{ "logo-mono-light.svg" | relURL }}">logo-mono-light.svg</a> — mono alb pentru fundal închis</li>

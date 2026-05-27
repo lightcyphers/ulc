@@ -47,6 +47,7 @@ pages:
     - mkdir -p site/static
     - cp logo.svg site/static/
     - cp logo-mini.svg site/static/
+    - cp logo-favicon.svg site/static/
     - cp logo-mono.svg site/static/
     - cp logo-mono-dark.svg site/static/
     - cp logo-mono-light.svg site/static/
