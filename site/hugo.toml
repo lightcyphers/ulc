@@ -1,8 +1,15 @@
-baseURL = "https://lightcyphers-open.gitlab.io/ulc/"
+baseURL = "https://logo.ungheni.biz/"
 languageCode = "ro-MD"
 title = "Ungheni — Mark Comunitar"
 defaultContentLanguage = "ro"
 enableEmoji = false
+
+# Dual baseURL support: site works at both https://logo.ungheni.biz/ and
+# https://lightcyphers-open.gitlab.io/ulc/ (and on local file:// preview).
+# relativeURLs makes all internal links relative (../, ./), so they don't
+# care which host serves them.
+relativeURLs = true
+canonifyURLs  = false
 
 [params]
   description = "Mark civic comunitar pentru orașul Ungheni — reconstrucție și adaptare post-sovietică. Identitate vizuală independentă, non-oficială."

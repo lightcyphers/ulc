@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>{{ block "title" . }}{{ .Title }} · {{ .Site.Title }}{{ end }}</title>
+<title>{{ block "title" . }}{{ if and .Title (ne .Title .Site.Title) }}{{ .Title }} · {{ end }}{{ .Site.Title }}{{ end }}</title>
 <meta name="description" content="{{ .Site.Params.description }}"/>
 <meta name="author" content="{{ .Site.Params.author }}"/>
 
 <!-- Open Graph -->
 <meta property="og:title" content="{{ .Site.Title }}"/>
 <meta property="og:description" content="{{ .Site.Params.description }}"/>
-<meta property="og:image" content="{{ "logo.svg" | absURL }}"/>
+<meta property="og:image" content="{{ "logo.svg" | relURL }}"/>
 <meta property="og:type" content="website"/>
 
 <link rel="icon" type="image/svg+xml" href="{{ "logo-mini.svg" | relURL }}"/>

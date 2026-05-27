@@ -28,7 +28,7 @@ Toate fișierele **SVG, PNG, PDF** (logo.svg și variantele lui, brandbook.pdf, 
 
 ### Licențiere comercială
 
-Pentru folosirea în scopuri comerciale (vânzare merchandise, integrare în produse comerciale, campanii plătite, sublicențiere), contactați **Lightcyphers SRL** pentru o licență comercială separată: <hello@lightcyphers.com>.
+Pentru folosirea în scopuri comerciale (vânzare merchandise, integrare în produse comerciale, campanii plătite, sublicențiere), contactați **Lightcyphers SRL** pentru o licență comercială separată: <contacts@lightcyphers.com>.
 
 ## 2 · Cod sursă — MIT
 

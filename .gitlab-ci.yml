@@ -55,8 +55,10 @@ pages:
     - cp logo-mini-mono-light.svg site/static/
     - cp brandbook.pdf site/static/ 2>/dev/null || echo "brandbook.pdf missing — regenerate locally with 'typst compile brandbook.typ'"
     - cp blueprint.pdf site/static/ 2>/dev/null || echo "blueprint.pdf missing — regenerate locally with 'typst compile blueprint.typ'"
-    # Build Hugo site
-    - hugo --minify --source site --destination ../public --baseURL "${CI_PAGES_URL}/"
+    # Build Hugo site — baseURL comes from hugo.toml (canonical: logo.ungheni.biz);
+    # relativeURLs=true in hugo.toml makes the build work at both the canonical
+    # custom domain and the GitLab Pages namespace URL.
+    - hugo --minify --source site --destination ../public
   pages:
     path_prefix: ''
   artifacts:
