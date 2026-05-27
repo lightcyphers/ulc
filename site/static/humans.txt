@@ -1,0 +1,26 @@
+/* TEAM */
+
+Author: Lightcyphers SRL
+Site: https://lightcyphers.com
+Contact: contacts@lightcyphers.com
+Location: Chișinău, Republica Moldova
+
+/* CREDIT */
+
+Reconstrucție și adaptare post-sovietică: Lightcyphers SRL (2016–2026).
+Motivele heraldice istorice (cheia + apele Prutului) sunt patrimoniu vizual public
+asociat orașului Ungheni, Republica Moldova.
+
+/* THANKS */
+
+Comunitatea Ungheni, Moldova.
+
+/* SITE */
+
+Last update: 2026-05-27
+Language: Română (ro-MD)
+Doctype: HTML5
+Standards: Schema.org, Open Graph, Twitter Cards, llms.txt
+Components: Hugo, Typst, cetz, Cinzel font
+License: Visual assets CC BY-NC-SA 4.0, code MIT
+Source: https://gitlab.com/lightcyphers-open/ulc

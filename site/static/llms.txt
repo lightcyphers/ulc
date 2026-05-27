@@ -1,0 +1,63 @@
+# Logo Ungheni — Mark Comunitar
+
+> Mark civic comunitar pentru orașul Ungheni, Republica Moldova. Reconstrucție și adaptare post-sovietică a stemei istorice (cheia + apele Prutului). Identitate vizuală independentă, NON-OFICIALĂ. Realizat de Lightcyphers SRL. Licență duală: CC BY-NC-SA 4.0 pentru active vizuale, MIT pentru cod.
+
+## Context
+
+Ungheni este oraș din Republica Moldova, situat pe râul Prut la granița cu România. Stema istorică, datând din perioada sovietică, conține:
+- O cheie de aur (simbol al orașului-poartă)
+- Șase bare ondulate de aur (apele Prutului — câte trei pe fiecare parte)
+- Câmp azur (albastru navy)
+
+Acest proiect oferă o REINTERPRETARE GRAFICĂ MODERNĂ a acestor motive heraldice, adaptată pentru Moldova post-1991. *Nu* este însemnul oficial al primăriei sau autorității locale.
+
+## Modificări intenționate față de versiunea sovietică
+
+- *Alfabet latin* pentru numele orașului: UNGHENI (vs. УНГЕНЫ chirilic în original)
+- *Dinții cheii orientați spre vest* — simbolizează deschiderea spre Europa
+- *Paletă plată modernă* — fără efectele de metal turnat ale insignei vechi
+- *Tipografie Cinzel* (capitale Roman inscripțional) pentru banderolă
+
+## Sistem de mark-uri
+
+- [Mark primar (logo.svg)](https://logo.ungheni.biz/logo.svg) — versiune completă color (viewBox 400×500)
+- [Mark mini (logo-mini.svg)](https://logo.ungheni.biz/logo-mini.svg) — simplificat pentru 32-128 px
+- [Favicon (logo-favicon.svg)](https://logo.ungheni.biz/logo-favicon.svg) — optimizat pentru 16-24 px
+- [Mono navy (logo-mono-dark.svg)](https://logo.ungheni.biz/logo-mono-dark.svg) — pentru fundaluri deschise
+- [Mono alb (logo-mono-light.svg)](https://logo.ungheni.biz/logo-mono-light.svg) — pentru fundaluri închise
+
+## Paletă
+
+- *Ungheni Navy:* `#102a5c` (RGB 16, 42, 92 · Pantone 2766 C) — câmpul scutului, textul
+- *Ungheni Gold:* `#c89826` (RGB 200, 152, 38 · Pantone 124 C) — toate elementele heraldice
+
+## Tipografie
+
+*Cinzel* (Google Fonts, OFL license) — capitale Roman inscripțional, inspirat din coloana lui Traian. Greutate Medium 500, letter-spacing 10, font-size 38pt în banderolă.
+
+## Documente
+
+- [Brandbook (ghid de stil)](https://logo.ungheni.biz/brandbook.pdf) — sistem, culori, tipografie, clear space, DO/DON'T, aplicații
+- [Blueprint (plan constructiv)](https://logo.ungheni.biz/blueprint.pdf) — toate coordonatele SVG, geometria Bezier a scutului, dimensiunile fiecărui element
+- [Licență completă](https://logo.ungheni.biz/license/)
+
+## Repository
+
+Sursă completă (SVG, Typst, HTML, CSS, CI/CD): <https://gitlab.com/lightcyphers-open/ulc>
+
+## Licență
+
+*Active vizuale (SVG, PDF, PNG):* Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0). Atribuire obligatorie: „Mark comunitar Ungheni, reconstrucție și adaptare © 2016-2026 Lightcyphers SRL, licențiat CC BY-NC-SA 4.0". Folosirea comercială necesită licență separată: contacts@lightcyphers.com.
+
+*Cod sursă (HTML, Typst, CSS, JS, config):* MIT License.
+
+## Cuvinte cheie
+
+Ungheni, Moldova, Republica Moldova, stema Ungheni, logo Ungheni, mark comunitar, identitate vizuală, heraldic, Prut, oraș-poartă, design civic, brand civic, open source, Creative Commons, Lightcyphers SRL.
+
+## Contact
+
+- Repository: <https://gitlab.com/lightcyphers-open/ulc>
+- Pagină principală: <https://logo.ungheni.biz/>
+- Licență comercială: contacts@lightcyphers.com
+- Organizație: <https://lightcyphers.com>

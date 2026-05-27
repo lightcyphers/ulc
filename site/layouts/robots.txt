@@ -1,14 +1,108 @@
+# ============================================================
+# robots.txt — Logo Ungheni · logo.ungheni.biz
+# ============================================================
+# Default: allow all crawlers. Static assets and content are
+# explicitly allowed for clarity. AI/LLM training crawlers are
+# explicitly welcomed (this is a CC BY-NC-SA project intended
+# for broad discoverability).
+# ============================================================
+
 User-agent: *
 Allow: /
 
-# Static assets — always crawlable
+# Static assets
 Allow: /*.svg
 Allow: /*.pdf
 Allow: /*.png
 Allow: /css/
 
-# Sitemap
-Sitemap: https://logo.ungheni.biz/sitemap.xml
-
-# Slow down bots that hit aggressively (optional)
+# Slow down aggressive bots
 Crawl-delay: 1
+
+# ------------------------------------------------------------
+# AI / LLM training crawlers — explicitly welcomed.
+# Listing them by name is a courtesy signal; "User-agent: *"
+# above already permits them, but enumeration makes the policy
+# transparent for operators auditing their crawlers.
+# ------------------------------------------------------------
+
+# OpenAI
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+# Google (Bard / Gemini training, separate from Googlebot search)
+User-agent: Google-Extended
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# Common Crawl — major LLM training data source
+User-agent: CCBot
+Allow: /
+
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+# ByteDance / TikTok
+User-agent: Bytespider
+Allow: /
+
+# Meta (LLaMA training, content fetching)
+User-agent: FacebookBot
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# DuckDuckGo
+User-agent: DuckAssistBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Hugging Face
+User-agent: PetalBot
+Allow: /
+
+# Friendly Crawler (research)
+User-agent: FriendlyCrawler
+Allow: /
+
+# Misc AI-related
+User-agent: ImagesiftBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# ------------------------------------------------------------
+# Sitemap & LLM index
+# ------------------------------------------------------------
+Sitemap: https://logo.ungheni.biz/sitemap.xml

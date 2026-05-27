@@ -47,8 +47,20 @@ disableKinds = ["taxonomy", "term"]
 [taxonomies]
 
 [outputs]
-  home = ["HTML", "RSS"]
-  page = ["HTML"]
+  home = ["HTML", "RSS", "MARKDOWN"]
+  page = ["HTML", "MARKDOWN"]
+
+# Custom Markdown output format (for AI crawlers / LLM-friendly consumption)
+[outputFormats.MARKDOWN]
+  mediaType = "text/markdown"
+  baseName = "index"
+  isPlainText = true
+  isHTML = false
+  noUgly = true
+  permalinkable = false
+
+[mediaTypes."text/markdown"]
+  suffixes = ["md"]
 
 [minify]
   disableHTML = false

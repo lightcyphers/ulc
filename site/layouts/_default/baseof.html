@@ -59,6 +59,16 @@
   <link rel="alternate" type="application/rss+xml" title="{{ $.Site.Title }}" href="{{ .Permalink }}"/>
 {{- end }}
 
+{{/* ============ Markdown alternate (LLM-friendly) ============ */}}
+{{ with .OutputFormats.Get "markdown" -}}
+  <link rel="alternate" type="text/markdown" title="Markdown version" href="{{ .Permalink }}"/>
+{{- end }}
+
+{{/* ============ AI / LLM policy meta ============ */}}
+<meta name="ai-content-policy" content="allow"/>
+<meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+<link rel="alternate" type="text/plain" title="LLM index" href="{{ "llms.txt" | relURL }}"/>
+
 {{/* ============ JSON-LD structured data (Organization + WebSite + ImageObject) ============ */}}
 {{ if $isHome }}
 <script type="application/ld+json">
