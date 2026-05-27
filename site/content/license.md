@@ -37,7 +37,7 @@ Toate fișierele de cod și configurație (HTML, Typst, CSS, JS, MD, YAML) sunt 
 ```
 MIT License
 
-Copyright (c) 2026 Lightcyphers SRL
+Copyright (c) 2016-2026 Lightcyphers SRL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -58,4 +58,4 @@ Motivele heraldice istorice care inspiră acest design (cheia ca simbol al oraș
 
 ---
 
-*© 2026 Lightcyphers SRL · Chișinău, Republica Moldova*
+*© 2016-2026 Lightcyphers SRL · Chișinău, Republica Moldova*

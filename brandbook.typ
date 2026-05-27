@@ -73,7 +73,7 @@ Modificări intenționate față de versiunea sovietică originală:
 
 #block(inset: 0.8em, fill: rgb("#f4f0e6"), radius: 4pt, width: 100%)[
   #set text(8.5pt, fill: rgb("#555"))
-  © 2026 *Lightcyphers SRL* — reconstrucție și adaptare. Designul este pus la dispoziția
+  © 2016-2026 *Lightcyphers SRL* — reconstrucție și adaptare. Designul este pus la dispoziția
   comunității pentru folosire liberă în contexte civice ne-oficiale. Motivele heraldice
   istorice (cheia + apele Prutului) reprezintă patrimoniu vizual public asociat orașului
   Ungheni și nu sunt revendicate ca proprietate exclusivă.

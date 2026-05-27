@@ -51,7 +51,7 @@ Toate fișierele de cod și configurație (`*.html`, `*.typ`, `*.css`, `*.js`, `
 ```
 MIT License
 
-Copyright (c) 2026 Lightcyphers SRL
+Copyright (c) 2016-2026 Lightcyphers SRL
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -88,4 +88,4 @@ de drepturi de autor sub legislația actuală moldovenească privind patrimoniul
 
 ---
 
-*© 2026 Lightcyphers SRL · Chișinău, Republica Moldova*
+*© 2016-2026 Lightcyphers SRL · Chișinău, Republica Moldova*

@@ -52,7 +52,7 @@
   #v(0.7cm)
   #block(inset: 0.7em, fill: rgb("#f4f0e6"), radius: 4pt, width: 13cm)[
     #set text(8.5pt, fill: rgb("#555"))
-    © 2026 *Lightcyphers SRL* — reconstrucție și adaptare post-sovietică. Modificări față de
+    © 2016-2026 *Lightcyphers SRL* — reconstrucție și adaptare post-sovietică. Modificări față de
     versiunea sovietică: alfabet latin (UNGHENI vs УНГЕНЫ), dinții cheii orientați spre vest
     (deschiderea spre Europa), paletă plată modernă, tipografie Cinzel inscripțional.
     Motivele heraldice istorice (cheia + apele Prutului) sunt patrimoniu vizual public,
