@@ -36,8 +36,6 @@ Un mark civic *independent* inspirat din motivele heraldice asociate orașului U
 ├── editor.html              # editor interactiv
 ├── Pasted image*.png        # imagini de referință originale
 ├── assets/                  # PNG-uri generate + clearspace SVG
-├── docs/                    # description.md, matrix.md (documentare inițială)
-├── iterations/              # rapoarte iterații loop (iter-1.md ... iter-14.md + summary.md)
 ├── screenshots/             # screenshots dezvoltare (compare-v*.png, bit-*.png, etc.)
 └── trace/                   # potrace artifacts (vectorizare poza referință)
 ```
