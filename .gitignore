@@ -39,6 +39,7 @@ typst-cache/
 # Local server runtime
 http-server.pid
 .claude/
+CLAUDE.md
 
 # Internal development artifacts — kept local only, not published
 iterations/

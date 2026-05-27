@@ -21,8 +21,6 @@ Un mark civic *independent* inspirat din motivele heraldice asociate orașului U
 |---|---|
 | `brandbook.pdf` / `brandbook.typ` | Style guide complet (sistem logo, culori, tipografie, clear space, DO/DON'T, aplicații) |
 | `blueprint.pdf` / `blueprint.typ` | Desen tehnic constructiv cu toate coordonatele și dimensiunile |
-| `compare.html` | Pagină de comparație: original vs reconstrucție, plus toate variantele la diferite dimensiuni |
-| `editor.html` | Editor interactiv pentru ajustări vizuale (drag/scale per element, undo/redo) |
 
 ## Structura folderelor
 
@@ -32,12 +30,7 @@ Un mark civic *independent* inspirat din motivele heraldice asociate orașului U
 ├── logo*.svg                # toate variantele mark-ului (sursă)
 ├── brandbook.{typ,pdf}      # style guide
 ├── blueprint.{typ,pdf}      # desen tehnic
-├── compare.html             # pagină comparație
-├── editor.html              # editor interactiv
-├── Pasted image*.png        # imagini de referință originale
-├── assets/                  # PNG-uri generate + clearspace SVG
-├── screenshots/             # screenshots dezvoltare (compare-v*.png, bit-*.png, etc.)
-└── trace/                   # potrace artifacts (vectorizare poza referință)
+└── assets/                  # PNG-uri generate (renders din SVG-uri)
 ```
 
 ## Paletă
@@ -66,9 +59,3 @@ inkscape logo.svg --export-type=png --export-filename=assets/logo.png --export-w
 
 (repetă pentru fiecare variantă)
 
-## Vezi pagina interactivă
-
-```bash
-python3 -m http.server 8765
-# apoi deschide http://localhost:8765/compare.html sau /editor.html
-```
